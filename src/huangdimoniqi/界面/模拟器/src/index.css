@@ -1,0 +1,88 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Noto+Serif+SC:wght@300;500;700;900&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-[#fcfbfa]: "Noto Serif SC", "Inter", serif;
+  --font-serif: "Noto Serif SC", serif;
+  --font-sans: "Inter", sans-serif;
+}
+
+html,
+body,
+#app {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  overflow: hidden;
+}
+
+body {
+  font-family: "Noto Serif SC", "Inter", serif;
+  background-color: transparent;
+  color: #fcfbfa;
+}
+
+.huangdi-scale-canvas {
+  box-sizing: border-box;
+}
+
+.huangdi-scale-canvas #game-workspace {
+  box-sizing: border-box;
+}
+
+/* Custom ink scroll transition animation */
+@keyframes scrollUnfold {
+  0% {
+    transform: scaleY(0.95);
+    opacity: 0;
+  }
+  100% {
+    transform: scaleY(1);
+    opacity: 1;
+  }
+}
+
+.animate-scroll-unfold {
+  animation: scrollUnfold 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* Incense burner smoke rising animation */
+@keyframes smokeRise {
+  0% {
+    transform: translateY(10%) scaleX(0.9) rotate(0deg);
+    opacity: 0;
+  }
+  50% {
+    opacity: 0.6;
+    transform: translateY(-30%) scaleX(1.1) rotate(5deg);
+  }
+  100% {
+    transform: translateY(-100%) scaleX(0.8) rotate(-5deg);
+    opacity: 0;
+  }
+}
+
+.animate-smoke-1 {
+  animation: smokeRise 4s ease-in-out infinite;
+}
+
+.animate-smoke-2 {
+  animation: smokeRise 5s ease-in-out infinite;
+  animation-delay: 1.5s;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.3);
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(191, 161, 95, 0.3);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(191, 161, 95, 0.6);
+}

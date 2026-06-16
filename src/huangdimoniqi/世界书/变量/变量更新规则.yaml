@@ -1,0 +1,130 @@
+---
+变量更新规则:
+  游戏:
+    历法:
+      check:
+        - 时间推进、重大事件后更新古代历法描述
+    地点:
+      check:
+        - 角色移动、驾临新场所时更新
+    天气:
+      type: |-
+        {
+          名称: string;
+          描述: string;
+          图标: string;
+        }
+      check:
+        - 季节更替、灾害或剧情需要时更新
+  角色:
+    attributes:
+      type: |-
+        {
+          health: number;
+          prestige: number;
+          gold: number;
+          military: number;
+          defense: number;
+          strength: number;
+          agility: number;
+          stamina: number;
+          intelligence: number;
+          luck: number;
+        }
+      check:
+        - 重大决策、战斗、册封、赈灾等事件后合理调整
+        - health/prestige/military/defense 单次变化通常不超过 ±15
+        - 核心属性 strength 等单次变化通常不超过 ±0.5
+    background:
+      check:
+        - 仅在身份、经历发生重大变化时更新
+  帝国:
+    summary:
+      check:
+        - 天下大势变化时更新朝政概况
+    treasury:
+      type: number
+      check:
+        - 赈灾、战争、税收、赏赐后更新
+    sentiment:
+      type: number
+      range: 0~100
+      check:
+        - 仁政、暴政、天灾人祸后调整民望
+    military:
+      type: number
+      check:
+        - 征兵、战败、边防变动后更新
+    grain:
+      type: number
+      check:
+        - 丰收、饥荒、赈济后更新
+  任务:
+    type: |-
+      {
+        [任务编号: string]: {
+          title: string;
+          description: string;
+          status: '进行中' | '已达成' | '已失败';
+          type: '主线' | '支线' | '奇遇';
+          reward: string;
+        }
+      }
+    check:
+      - 剧情触发新使命时 insert，完成或失败后 replace status
+  物品:
+    type: |-
+      {
+        [物品编号: string]: {
+          name: string;
+          description: string;
+          quality: '神传' | '绝世' | '奇珍' | '凡器';
+          type: string;
+          count: number;
+        }
+      }
+    check:
+      - 获得、消耗、赏赐物品时更新；count 归零后 remove
+  技能:
+    type: |-
+      {
+        [技能编号: string]: {
+          name: string;
+          level: string;
+          description: string;
+          exp: number;
+          type: string;
+        }
+      }
+    check:
+      - 修炼、顿悟、传授后更新 exp 或 level
+  NPC:
+    type: |-
+      {
+        [人物编号: string]: {
+          name: string;
+          role: string;
+          relationship: string;
+          relationVal: number;
+          loyalty: number;
+          statusText: string;
+        }
+      }
+    check:
+      - 人物登场、关系变化、忠诚度变动时更新
+  编年:
+    type: |-
+      Array<{
+        turn: number;
+        year: number;
+        eventText: string;
+      }>
+    check:
+      - 重大历史事件后以 insert 追加，保留最近 20 条
+  当前剧情:
+    story:
+      check:
+        - 由模拟器界面主导演算，聊天中通常不直接覆盖
+    worldEvent:
+      check:
+        - 天下大势播报，随剧情推进更新

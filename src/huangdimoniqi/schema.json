@@ -1,0 +1,688 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "default": {},
+  "type": "object",
+  "properties": {
+    "游戏": {
+      "default": {},
+      "type": "object",
+      "properties": {
+        "已初始化": {
+          "default": false,
+          "type": "boolean"
+        },
+        "主菜单": {
+          "default": true,
+          "type": "boolean"
+        },
+        "历法": {
+          "default": "",
+          "type": "string"
+        },
+        "地域编号": {
+          "default": "capital",
+          "type": "string"
+        },
+        "日程阶段": {
+          "default": 0,
+          "type": "number"
+        },
+        "游玩模式": {
+          "default": "自主",
+          "type": "string",
+          "enum": [
+            "自主",
+            "快速"
+          ]
+        },
+        "地点": {
+          "default": "太和殿（金銮宝殿）",
+          "type": "string"
+        },
+        "天气": {
+          "default": {},
+          "type": "object",
+          "properties": {
+            "名称": {
+              "default": "晴",
+              "type": "string"
+            },
+            "描述": {
+              "default": "天朗气清，紫气东来",
+              "type": "string"
+            },
+            "图标": {
+              "default": "☀️",
+              "type": "string"
+            }
+          }
+        },
+        "预设编号": {
+          "default": "",
+          "type": "string"
+        },
+        "自定义模式": {
+          "default": false,
+          "type": "boolean"
+        },
+        "自定义朝代": {
+          "default": "大明",
+          "type": "string"
+        },
+        "自定义身份": {
+          "default": "",
+          "type": "string"
+        },
+        "自定义历法": {
+          "default": "",
+          "type": "string"
+        },
+        "自定义背景": {
+          "default": "",
+          "type": "string"
+        },
+        "自定义已发生": {
+          "default": "",
+          "type": "string"
+        },
+        "自定义未发生": {
+          "default": "",
+          "type": "string"
+        }
+      }
+    },
+    "角色": {
+      "default": {},
+      "type": "object",
+      "properties": {
+        "name": {
+          "default": "",
+          "type": "string"
+        },
+        "age": {
+          "default": 22,
+          "type": "number"
+        },
+        "dynasty": {
+          "default": "",
+          "type": "string"
+        },
+        "identity": {
+          "default": "",
+          "type": "string"
+        },
+        "title": {
+          "default": "",
+          "type": "string"
+        },
+        "avatarSeed": {
+          "default": "",
+          "type": "string"
+        },
+        "avatarUrl": {
+          "default": "",
+          "type": "string"
+        },
+        "background": {
+          "default": "",
+          "type": "string"
+        },
+        "attributes": {
+          "default": {},
+          "type": "object",
+          "properties": {
+            "health": {
+              "default": 100,
+              "$ref": "#/$defs/__schema0"
+            },
+            "prestige": {
+              "default": 50,
+              "$ref": "#/$defs/__schema0"
+            },
+            "gold": {
+              "default": 1000,
+              "$ref": "#/$defs/__schema1"
+            },
+            "military": {
+              "default": 50,
+              "$ref": "#/$defs/__schema0"
+            },
+            "defense": {
+              "default": 50,
+              "$ref": "#/$defs/__schema0"
+            },
+            "strength": {
+              "default": 2,
+              "$ref": "#/$defs/__schema2"
+            },
+            "agility": {
+              "default": 2,
+              "$ref": "#/$defs/__schema2"
+            },
+            "stamina": {
+              "default": 2,
+              "$ref": "#/$defs/__schema2"
+            },
+            "intelligence": {
+              "default": 2,
+              "$ref": "#/$defs/__schema2"
+            },
+            "luck": {
+              "default": 2,
+              "$ref": "#/$defs/__schema2"
+            },
+            "fitness": {
+              "default": 100,
+              "$ref": "#/$defs/__schema0"
+            },
+            "satiety": {
+              "default": 100,
+              "$ref": "#/$defs/__schema0"
+            },
+            "energy": {
+              "default": 0,
+              "$ref": "#/$defs/__schema1"
+            },
+            "energyMax": {
+              "default": 0,
+              "$ref": "#/$defs/__schema1"
+            },
+            "perception": {
+              "default": 2,
+              "$ref": "#/$defs/__schema2"
+            },
+            "resolve": {
+              "default": 2,
+              "$ref": "#/$defs/__schema2"
+            },
+            "charm": {
+              "default": 2,
+              "$ref": "#/$defs/__schema2"
+            },
+            "manipulation": {
+              "default": 2,
+              "$ref": "#/$defs/__schema2"
+            },
+            "composure": {
+              "default": 2,
+              "$ref": "#/$defs/__schema2"
+            },
+            "illness": {
+              "default": "",
+              "type": "string"
+            },
+            "wisdomIndex": {
+              "default": 0,
+              "type": "number"
+            },
+            "benevolenceIndex": {
+              "default": 0,
+              "type": "number"
+            }
+          }
+        },
+        "status": {
+          "default": [],
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "illness": {
+          "default": "",
+          "type": "string"
+        },
+        "experience": {
+          "default": 0,
+          "type": "number"
+        }
+      }
+    },
+    "帝国": {
+      "default": {},
+      "type": "object",
+      "properties": {
+        "summary": {
+          "default": "",
+          "type": "string"
+        },
+        "officials": {
+          "default": 0,
+          "type": "number"
+        },
+        "treasury": {
+          "default": 0,
+          "$ref": "#/$defs/__schema1"
+        },
+        "sentiment": {
+          "default": 50,
+          "$ref": "#/$defs/__schema0"
+        },
+        "military": {
+          "default": 0,
+          "$ref": "#/$defs/__schema1"
+        },
+        "grain": {
+          "default": 0,
+          "$ref": "#/$defs/__schema1"
+        },
+        "annualIncome": {
+          "default": 0,
+          "$ref": "#/$defs/__schema1"
+        },
+        "annualExpense": {
+          "default": 0,
+          "$ref": "#/$defs/__schema1"
+        }
+      }
+    },
+    "任务": {
+      "default": {},
+      "type": "object",
+      "propertyNames": {
+        "type": "string"
+      },
+      "additionalProperties": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "title": {
+            "type": "string"
+          },
+          "description": {
+            "type": "string"
+          },
+          "status": {
+            "default": "进行中",
+            "type": "string",
+            "enum": [
+              "进行中",
+              "已达成",
+              "已失败"
+            ]
+          },
+          "type": {
+            "default": "支线",
+            "type": "string",
+            "enum": [
+              "主线",
+              "支线",
+              "奇遇"
+            ]
+          },
+          "reward": {
+            "default": "",
+            "type": "string"
+          },
+          "progress": {
+            "default": "",
+            "type": "string"
+          },
+          "failurePenalty": {
+            "default": "",
+            "type": "string"
+          },
+          "difficulty": {
+            "default": "",
+            "type": "string"
+          }
+        },
+        "required": [
+          "id",
+          "title",
+          "description"
+        ]
+      }
+    },
+    "技能": {
+      "default": {},
+      "type": "object",
+      "propertyNames": {
+        "type": "string"
+      },
+      "additionalProperties": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "level": {
+            "type": "string"
+          },
+          "description": {
+            "type": "string"
+          },
+          "exp": {
+            "default": 0,
+            "type": "number"
+          },
+          "type": {
+            "default": "君臣国政",
+            "type": "string",
+            "enum": [
+              "武林秘籍",
+              "君臣国政",
+              "修真方术",
+              "风雅杂世"
+            ]
+          }
+        },
+        "required": [
+          "id",
+          "name",
+          "level",
+          "description"
+        ]
+      }
+    },
+    "物品": {
+      "default": {},
+      "type": "object",
+      "propertyNames": {
+        "type": "string"
+      },
+      "additionalProperties": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "description": {
+            "type": "string"
+          },
+          "quality": {
+            "default": "凡器",
+            "type": "string",
+            "enum": [
+              "神传",
+              "绝世",
+              "奇珍",
+              "凡器"
+            ]
+          },
+          "type": {
+            "default": "俗世细软",
+            "type": "string",
+            "enum": [
+              "御用神兵",
+              "传国信物",
+              "灵丹妙药",
+              "武学残册",
+              "俗世细软"
+            ]
+          },
+          "count": {
+            "default": 1,
+            "type": "number"
+          },
+          "effect": {
+            "default": "",
+            "type": "string"
+          }
+        },
+        "required": [
+          "id",
+          "name",
+          "description"
+        ]
+      }
+    },
+    "NPC": {
+      "default": {},
+      "type": "object",
+      "propertyNames": {
+        "type": "string"
+      },
+      "additionalProperties": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "avatarSeed": {
+            "default": "",
+            "type": "string"
+          },
+          "role": {
+            "default": "",
+            "type": "string"
+          },
+          "age": {
+            "default": 30,
+            "type": "number"
+          },
+          "relationship": {
+            "default": "",
+            "type": "string"
+          },
+          "relationVal": {
+            "default": 50,
+            "type": "number"
+          },
+          "loyalty": {
+            "default": 50,
+            "type": "number"
+          },
+          "deeds": {
+            "default": [],
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "items": {
+            "default": [],
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "statusText": {
+            "default": "",
+            "type": "string"
+          },
+          "location": {
+            "default": "",
+            "type": "string"
+          },
+          "currentThoughts": {
+            "default": "",
+            "type": "string"
+          },
+          "playerImpression": {
+            "default": "",
+            "type": "string"
+          },
+          "isPresent": {
+            "default": false,
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "name"
+        ]
+      }
+    },
+    "地域": {
+      "default": {},
+      "type": "object",
+      "propertyNames": {
+        "type": "string"
+      },
+      "additionalProperties": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "description": {
+            "type": "string"
+          },
+          "status": {
+            "default": "太平",
+            "type": "string",
+            "enum": [
+              "太平",
+              "匪患",
+              "干旱",
+              "繁荣",
+              "戒严"
+            ]
+          },
+          "coordinates": {
+            "type": "object",
+            "properties": {
+              "x": {
+                "type": "number"
+              },
+              "y": {
+                "type": "number"
+              }
+            },
+            "required": [
+              "x",
+              "y"
+            ]
+          },
+          "dynastyAffiliation": {
+            "default": "",
+            "type": "string"
+          }
+        },
+        "required": [
+          "id",
+          "name",
+          "description",
+          "coordinates"
+        ]
+      }
+    },
+    "编年": {
+      "default": [],
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "turn": {
+            "type": "number"
+          },
+          "year": {
+            "type": "number"
+          },
+          "eventText": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "turn",
+          "year",
+          "eventText"
+        ]
+      }
+    },
+    "对话历史": {
+      "default": [],
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "role": {
+            "type": "string",
+            "enum": [
+              "assistant",
+              "user"
+            ]
+          },
+          "text": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "role",
+          "text"
+        ]
+      }
+    },
+    "当前剧情": {
+      "default": {},
+      "type": "object",
+      "properties": {
+        "story": {
+          "default": "",
+          "type": "string"
+        },
+        "choices": {
+          "default": [],
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "text": {
+                "type": "string"
+              },
+              "category": {
+                "default": "",
+                "type": "string"
+              },
+              "attributeChanges": {
+                "default": {},
+                "type": "object",
+                "propertyNames": {
+                  "type": "string"
+                },
+                "additionalProperties": {
+                  "type": "number"
+                }
+              },
+              "questUpdate": {
+                "default": "",
+                "type": "string"
+              }
+            },
+            "required": [
+              "id",
+              "text"
+            ]
+          }
+        },
+        "worldEvent": {
+          "default": "",
+          "type": "string"
+        },
+        "foundItem": {
+          "default": "",
+          "type": "string"
+        },
+        "attainedSkill": {
+          "default": "",
+          "type": "string"
+        }
+      }
+    }
+  },
+  "$defs": {
+    "__schema0": {
+      "type": "number"
+    },
+    "__schema1": {
+      "type": "number"
+    },
+    "__schema2": {
+      "type": "number"
+    }
+  }
+}

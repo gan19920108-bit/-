@@ -1,0 +1,6 @@
+{
+  "name": "穿越古代模拟人生",
+  "description": "一款融合了大语言模型的东方古典穿越模拟RPG文字交互游戏。玩家可以选择皇帝、大将军、文儒学士或龙虎山方士等身份，体验浩瀚朝代波澜局势，书写千秋传奇。",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

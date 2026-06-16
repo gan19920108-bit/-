@@ -1,0 +1,78 @@
+# yaml-language-server: $schema=../../schema.json
+游戏:
+  已初始化: false
+  主菜单: true
+  历法: ''
+  地域编号: capital
+  日程阶段: 0
+  游玩模式: 自主
+  地点: 太和殿（金銮宝殿）
+  天气:
+    名称: 晴
+    描述: 天朗气清，紫气东来
+    图标: ☀️
+  预设编号: ''
+  自定义模式: false
+  自定义朝代: 大明
+  自定义身份: ''
+  自定义历法: ''
+  自定义背景: ''
+  自定义已发生: ''
+  自定义未发生: ''
+角色:
+  name: ''
+  age: 22
+  dynasty: ''
+  identity: ''
+  title: ''
+  avatarSeed: ''
+  avatarUrl: ''
+  background: ''
+  attributes:
+    health: 100
+    prestige: 50
+    gold: 1000
+    military: 50
+    defense: 50
+    strength: 2
+    agility: 2
+    stamina: 2
+    intelligence: 2
+    luck: 2
+    fitness: 100
+    satiety: 100
+    energy: 0
+    energyMax: 0
+    perception: 2
+    resolve: 2
+    charm: 2
+    manipulation: 2
+    composure: 2
+    illness: ''
+    wisdomIndex: 0
+    benevolenceIndex: 0
+  status: []
+  illness: ''
+  experience: 0
+帝国:
+  summary: 山河清定，政令畅达。
+  officials: 0
+  treasury: 0
+  sentiment: 50
+  military: 0
+  grain: 0
+  annualIncome: 0
+  annualExpense: 0
+任务: {}
+技能: {}
+物品: {}
+NPC: {}
+地域: {}
+编年: []
+对话历史: []
+当前剧情:
+  story: ''
+  choices: []
+  worldEvent: ''
+  foundItem: ''
+  attainedSkill: ''
